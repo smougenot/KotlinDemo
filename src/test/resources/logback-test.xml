@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+    </encoder>
+  </appender>
+
+  <logger name="fr.tse.jacademie" level="TRACE"/>
+  <logger name="org.dbunit" level="INFO"/>
+  <logger name="org.h2" level="INFO"/>
+
+  <logger name="org.hibernate.jpa.internal.util.LogHelper" level="DEBUG"/>
+  <logger name="org.hibernate.SQL" level="DEBUG"/>
+  <logger name="org.hibernate.type.descriptor.sql" level="TRACE"/>
+  <!--<logger name="org.hibernate" level="TRACE"/>-->
+
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

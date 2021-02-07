@@ -1,0 +1,39 @@
+= Kotlin Demo + Spring Boot
+
+== Objectif
+
+Présentation succincte de Kotlin, mise oeuvre autour de Spring Boot, JPA et REST
+
+== Initialisation
+
+À partir de https://start.spring.io/=!type=gradle-project&language=kotlin&platformVersion=2.4.2.RELEASE&packaging=jar&jvmVersion=11&groupId=fr.tse.jacademie&artifactId=kotlinDemo&name=kotlinDemo&description=Demo%20project%20for%20Spring%20Boot%20Kotlin&packageName=fr.tse.jacademie.kotlinDemo&dependencies=web,data-jpa,h2,actuator,data-rest-explorer,data-rest[start.spring.io] with Gradle, Kotlin, Java 11 +
+Du code repris depuis les documentations référencées. +
+Du code inspiré par les TPs de la JAcadémie.
+
+== Kotlin en quelques mots
+
+// TODO: à compléter
+
+=== JPA
+
+* `open` plugin `allopen`
+* Mutable
+  ** val -> var
+  ** Set -> MutableSet
+
+=== Test unitaire (Spring, MockBean)
+
+* Nom de Méthode `\`ma methode\``
+
+<<fr/tse/jacademie/kotlinDemo/service/StudentServiceTest.kt, StudentServiceTest.kt>>
+
+=== Test d'intégration Web
+
+<<fr/tse/jacademie/kotlinDemo/web/StudentControllerIntegrationTest.kt,StudentControllerIntegrationTest.kt>>
+
+
+== References / documentation
+
+* https://start.spring.io/[start.spring.io]
+* https://kotlinlang.org/docs/reference/server-overview.html[Kotlin language]
+* https://spring.io/guides/tutorials/spring-boot-kotlin/[Spring-boot Kotlin tutorial]
