@@ -1,5 +1,8 @@
 = Kotlin Demo + Spring Boot
 
+image:https://www.codefactor.io/repository/github/smougenot/kotlindemo/badge[Code Factor, link=https://www.codefactor.io/repository/github/smougenot/kotlindemo]
+
+
 == Objectif
 
 Présentation succincte de Kotlin, mise oeuvre autour de Spring Boot, JPA et REST
