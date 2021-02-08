@@ -61,6 +61,7 @@ publishing {
     }
     publications {
         register("gpr", MavenPublication::class) {
+            artifactId = project.name.toLowerCase()
             artifact(tasks.named("bootJar"))
         }
     }
