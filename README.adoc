@@ -1,6 +1,7 @@
 = Kotlin Demo + Spring Boot
 
 image:https://www.codefactor.io/repository/github/smougenot/kotlindemo/badge[Code Factor, link=https://www.codefactor.io/repository/github/smougenot/kotlindemo]
+image:https://github.com/smougenot/kotlindemo/workflows/Gradle%20Build/badge.svg[Workflow status]
 
 
 == Objectif
