@@ -16,6 +16,7 @@ Du code inspiré par les TPs de la JAcadémie.
 
 == Kotlin en quelques mots
 
+
 // TODO: à compléter
 
 === JPA
@@ -29,11 +30,11 @@ Du code inspiré par les TPs de la JAcadémie.
 
 * Nom de Méthode `\`ma methode\``
 
-<<fr/tse/jacademie/kotlinDemo/service/StudentServiceTest.kt, StudentServiceTest.kt>>
+https://github.com/smougenot/KotlinDemo/blob/main/src/test/kotlin/fr/tse/jacademie/kotlinDemo/service/StudentServiceTest.kt[StudentServiceTest.kt]
 
 === Test d'intégration Web
 
-<<fr/tse/jacademie/kotlinDemo/web/StudentControllerIntegrationTest.kt,StudentControllerIntegrationTest.kt>>
+https://github.com/smougenot/KotlinDemo/blob/main/src/test/kotlin/fr/tse/jacademie/kotlinDemo/web/StudentControllerIntegrationTest.kt[StudentControllerIntegrationTest.kt]
 
 
 == References / documentation
