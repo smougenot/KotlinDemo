@@ -7,7 +7,7 @@ import javax.persistence.Id
 
 @Entity
 class Student(
-        var name: String?,
+        var name: String,
         @ElementCollection var notes: MutableList<Note> = mutableListOf<Note>(),
         @Id @GeneratedValue var id: Long? = null) {
 }

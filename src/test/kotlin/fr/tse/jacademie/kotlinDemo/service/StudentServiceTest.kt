@@ -24,7 +24,7 @@ internal class StudentServiceTest(@Autowired val service: StudentService) {
     fun `should compute average on student having notes`() {
         given(repo.findById(any())).willReturn(Optional.of(
                 Student(
-                        name = null,
+                        name = "Test",
                         notes = mutableListOf(
                                 Note("A", 10.0),
                                 Note("B", 15.0),
