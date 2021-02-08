@@ -61,7 +61,6 @@ publishing {
     }
     publications {
         register("gpr", MavenPublication::class) {
-            groupId = "eu.energypool.lambda"
             artifact(tasks.named("bootJar"))
         }
     }
