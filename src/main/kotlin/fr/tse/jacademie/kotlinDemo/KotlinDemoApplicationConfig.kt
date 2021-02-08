@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 class KotlinDemoApplicationConfig {
     /**
-     * With this declaration you will able to inject logger in your Spring beans
+     * With this declaration you will be able to inject logger in your Spring beans
      */
     @Bean
     fun logger(injectionPoint: InjectionPoint): Logger =
