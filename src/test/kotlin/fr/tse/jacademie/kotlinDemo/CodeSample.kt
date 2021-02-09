@@ -17,12 +17,35 @@ class CodeSample {
         mesChoix.add("ou ça")
     }
 
+    fun sum(a: Int, b: Int) = a + b
+
+    fun printSum(a: Int, b: Int): Unit {
+        println("sum of $a and $b is ${a + b}")
+    }
+
     fun nom(param: String): String {
         return "the result"
     }
 
     fun nom(nullable: String?, nonNull: String) {
         //...
+    }
+
+    fun getStringLength(obj: Any): Int? {
+        if (obj is String) {
+            // `obj` is automatically cast to `String` in this branch
+            return obj.length
+        }
+
+        // `obj` is still of type `Any` outside of the type-checked branch
+        return null
+    }
+
+
+    fun nom(files: String?) {
+        // accède à size si files est non null
+        // valeur par défaut (files==null ||  files.size==null)
+        println(files?.length ?: "empty")
     }
 
     fun strings() {
@@ -39,11 +62,11 @@ class CodeSample {
 }
 
 data class MessageK(
-    val from: String,
-    val to: String,
-    val title: String? = null,
-    val cc: String? = null,
-    val body: String? = null
+        val from: String,
+        val to: String,
+        val title: String? = null,
+        val cc: String? = null,
+        val body: String? = null
 )
 
 val t = MessageK(from = "From", to = "To", cc = "Cc")
