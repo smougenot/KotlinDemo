@@ -16,6 +16,129 @@ Du code inspiré par les TPs de la JAcadémie.
 
 == Kotlin en quelques mots
 
+* Plus lisible
+* Moins de code
+* Plus de vérifications à la compilation
+* Beaucoup de bonnes pratiques
+* Tourne dans la JVM (interopérable)
+
+
+=== Variable : Mutabilité explicite
+
+Immutable
+[source,Java]
+----
+val maConstante = "Never change"
+val mesChoix = setOf("ras")
+
+----
+
+Mutable
+[source,Java]
+----
+var maConstante = "Can change"
+maConstante = "toto"
+
+val mesChoix = mutableSetOf("ci")
+mesChoix.add("ou ça")
+----
+
+=== Fonction
+
+[source,Java]
+----
+fun nom(param: String): String {
+  return "the result "
+}
+----
+
+=== Null safe : à la compilation
+
+[source,Java]
+----
+fun nom(nullable: String?, nonNull: String) {
+  //...
+}
+----
+
+=== Classe
+
+* Multiples classes par fichier source
+* Pas forcément de corps
+* Finale par défaut
+
+[source,Java]
+----
+open class ParentClass(val size: Int) {
+    fun wontOverride() {
+        // ...
+    }
+
+    open fun canOverride() {
+        // ...
+    }
+}
+
+class DescendantClass(aSize: Int) : ParentClass(aSize) {
+    override fun canOverride() {
+        // ...
+    }
+}
+
+fun f() {
+    val numberFour = DescendantClass(4)
+}
+----
+
+
+=== Data class
+
+* Pojo
+* Immutable
+* Finale
+
+=== Paramètre nommés, valeurs par défaut
+
+[source,Java]
+----
+data class MessageK(
+  val from: String,
+  val to: String,
+  val title: String? = null,
+  val cc: String? = null,
+  val body: String? = null
+)
+
+val t = MessageK(from="From", to="To", cc="Cc")
+----
+
+
+=== String
+
+Interpolation de variable
+[source,Java]
+----
+val qui="who"
+val msg="${qui.toUpperCase()} est sur la première base"
+----
+
+
+Multi-ligne litérale
+[source,Java]
+----
+val texte = """
+    Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt
+    ut labore et dolore magna aliqua.
+""".trimIndent()
+----
+
+=== Destructuration
+
+=== Extension
+
+=== Function de niveau supérieur
 
 // TODO: à compléter
 
