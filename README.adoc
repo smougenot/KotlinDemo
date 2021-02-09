@@ -26,7 +26,7 @@ Du code inspiré par les TPs de la JAcadémie.
 === Variable : Mutabilité explicite
 
 Immutable
-[source,Java]
+[source,Kotlin]
 ----
 val maConstante = "Never change"
 val mesChoix = setOf("ras")
@@ -34,7 +34,7 @@ val mesChoix = setOf("ras")
 ----
 
 Mutable
-[source,Java]
+[source,Kotlin]
 ----
 var maConstante = "Can change"
 maConstante = "toto"
@@ -45,7 +45,7 @@ mesChoix.add("ou ça")
 
 === Fonction
 
-[source,Java]
+[source,Kotlin]
 ----
 fun nom(param: String): String {
   return "the result "
@@ -54,7 +54,7 @@ fun nom(param: String): String {
 
 === Null safe : à la compilation
 
-[source,Java]
+[source,Kotlin]
 ----
 fun nom(nullable: String?, nonNull: String) {
   //...
@@ -67,7 +67,7 @@ fun nom(nullable: String?, nonNull: String) {
 * Pas forcément de corps
 * Finale par défaut
 
-[source,Java]
+[source,Kotlin]
 ----
 open class ParentClass(val size: Int) {
     fun wontOverride() {
@@ -99,7 +99,7 @@ fun f() {
 
 === Paramètre nommés, valeurs par défaut
 
-[source,Java]
+[source,Kotlin]
 ----
 data class MessageK(
   val from: String,
@@ -116,7 +116,7 @@ val t = MessageK(from="From", to="To", cc="Cc")
 === String
 
 Interpolation de variable
-[source,Java]
+[source,Kotlin]
 ----
 val qui="who"
 val msg="${qui.toUpperCase()} est sur la première base"
@@ -124,7 +124,7 @@ val msg="${qui.toUpperCase()} est sur la première base"
 
 
 Multi-ligne litérale
-[source,Java]
+[source,Kotlin]
 ----
 val texte = """
     Lorem ipsum dolor sit amet,
