@@ -16,10 +16,16 @@ Du code inspiré par les TPs de la JAcadémie.
 
 == Kotlin en quelques mots
 
+https://kotlinlang.org/docs/reference/server-overview.html[Kotlin languageSS]
+
 * Kotlin pour serveur (~Java)
-* Kotlin Javascript
+  ** Compilé en `.class`
 * Kotlin Android
+  ** Cité pour la classe
+* Kotlin Javascript
+  ** Compilé en `.js` (https://www.ecma-international.org/ecma-262/5.1/[ES5])
 * Kotlin Native
+** Compilé en binaire (pour l'OS)
 
 === Généralité
 
@@ -263,9 +269,55 @@ items.fold(0, {
 === Mais aussi
 
 * alias de type
+[source,Kotlin]
+----
+typealias ID = Long?
+
+@Entity
+class Student(
+        var name: String,
+        @Id @GeneratedValue var id: ID = null)
+----
+
 * scope function
+[source,Kotlin]
+----
+val adam = Person("Adam").apply {
+    age = 20  // same as this.age = 20 or adam.age = 20
+    city = "London"
+}
+----
+
 * `when`
+[source,Kotlin]
+----
+when (x) {
+    is Int -> print(x + 1)
+    is String -> print(x.length + 1)
+    is IntArray -> print(x.sum())
+}
+----
+
 * Type-Safe Builders
+[source,Kotlin]
+----
+
+fun result() =
+    html {
+        head {
+            title {+"XML encoding with Kotlin"}
+        }
+    //...
+    }
+
+fun html(init: HTML.() -> Unit): HTML {
+    val html = HTML()
+    html.init()
+    return html
+}
+----
+
+* Coroutines (thread légers)
 ...
 
 === JPA
@@ -284,7 +336,6 @@ https://github.com/smougenot/KotlinDemo/blob/main/src/test/kotlin/fr/tse/jacadem
 === Test d'intégration Web
 
 https://github.com/smougenot/KotlinDemo/blob/main/src/test/kotlin/fr/tse/jacademie/kotlinDemo/web/StudentControllerIntegrationTest.kt[StudentControllerIntegrationTest.kt]
-
 
 == References / documentation
 
