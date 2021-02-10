@@ -1,11 +1,14 @@
 package fr.tse.jacademie.kotlinDemo
 
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
+
 /** Sample code usd in the documentation */
-class CodeSample {
+class CodeSampleTest {
 
     fun nonMutable() {
         // Non mutable
-        val maConstante = "Never change"
+        val maConstante = "Never change me"
         val mesChoix = setOf("ras")
     }
 
@@ -28,7 +31,8 @@ class CodeSample {
     }
 
     fun nom(nullable: String?, nonNull: String) {
-        //...
+        // nullable.length // do not compile
+        nullable!!.length
     }
 
     fun getStringLength(obj: Any): Int? {
@@ -89,4 +93,14 @@ class DescendantClass(aSize: Int) : ParentClass(aSize) {
 
 fun f() {
     val numberFour = DescendantClass(4)
+}
+
+
+fun String.asKebab() = this.replace(' ', '-')
+
+class KebabExtensionTest {
+    @Test
+    fun testKebab() {
+        assertThat("a Bc d".asKebab()).isEqualTo("a-Bc-d")
+    }
 }

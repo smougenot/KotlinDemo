@@ -29,12 +29,19 @@ Du code inspiré par les TPs de la JAcadémie.
 * Beaucoup de bonnes pratiques
 * Tourne dans la JVM (interopérable)
 
+=== Goodies
+
+* oublie le `;` en fin d'instruction
+* oublie l'opérateur' `new`
+* les attributs sont `public` par défaut
+* oublie les accesseurs (même si on les utilisent)
+
 === Variable : Mutabilité explicite
 
 Immutable
 [source,Kotlin]
 ----
-val maConstante = "Never change"
+val maConstante = "Never change me"
 val mesChoix = setOf("ras")
 
 ----
@@ -64,12 +71,15 @@ fun printSum(a: Int, b: Int): Unit {
 }
 ----
 
+Également possible à l'extérieur d'une classe
+
 === Null safe : à la compilation
 
 [source,Kotlin]
 ----
 fun nom(nullable: String?, nonNull: String) {
-  //...
+  // nullable.length // do not compile
+  nullable!!.length
 }
 
 fun nom(files: String?) {
@@ -154,7 +164,7 @@ val msg="${qui.toUpperCase()} est sur la première base"
 ----
 
 
-Multi-ligne litérale
+Multi-ligne littérale
 [source,Kotlin]
 ----
 val texte = """
@@ -167,11 +177,96 @@ val texte = """
 
 === Destructuration
 
+* Projette le contenu d'un objet dans plusieurs variables.
+* Attention à l'ordre
+* Va bien avec une `data class`
+
+[source,Kotlin]
+----
+for ((key, value) in map) {
+// do something with the key and the value
+}
+----
+
+[source,Kotlin]
+----
+val numbers = listOf("one", "two", "three", "four")
+val (match, rest) = numbers.partition { it.length > 3 }
+----
+
 === Extension
+
+* Ajouter des méthodes à une classe existante
+
+
+[source,Kotlin]
+----
+fun String.asKebab() = this.replace(' ', '-')
+
+assertThat("a Bc d".asKebab()).isEqualTo("a-Bc-d")
+----
+
+* Ajouter des attributs (~getter) à une classe existante
+
+e.g. Ajouter un attribut indiquant le plus haut index de position dans une liste +
+sur toutes les listes (via un getter)
+[source,Kotlin]
+----
+val <T> List<T>.lastIndex: Int
+    get() = size - 1
+
+var maListe = listOf("1", "2", "3")
+maListe.lastIndex // is 2
+----
 
 === Function de niveau supérieur
 
-// TODO: à compléter
+* Une fonction qui prend en paramètre une fonction
+* lambda comme en Java
+
+Exemple l'extension `fold` fournie sur les collections
+
+[source,Kotlin]
+----
+fun <T, R> Collection<T>.fold(
+    initial: R,
+    combine: (acc: R, nextElement: T) -> R // <1>
+): R {
+    var accumulator: R = initial
+    for (element: T in this) {
+        accumulator = combine(accumulator, element)
+    }
+    return accumulator
+}
+----
+<1> Signature d'une fonction
+
+Utilisation
+[source,Kotlin]
+----
+
+val items = listOf(1, 2, 3, 4, 5)
+
+// Lambdas are code blocks enclosed in curly braces.
+items.fold(0, {
+  // When a lambda has parameters, they go first, followed by '->'
+  acc: Int, i: Int ->
+    print("acc = $acc, i = $i, ")
+    val result = acc + i
+    println("result = $result")
+    // The last expression in a lambda is considered the return value:
+    result
+})
+----
+
+
+=== Mais aussi
+
+* alias de type
+* scope function
+* `when`
+* Type-Safe Builders
+...
 
 === JPA
 
