@@ -10,7 +10,8 @@ Présentation succincte de Kotlin, mise oeuvre autour de Spring Boot, JPA et RES
 
 == Initialisation
 
-À partir de https://start.spring.io/=!type=gradle-project&language=kotlin&platformVersion=2.4.2.RELEASE&packaging=jar&jvmVersion=11&groupId=fr.tse.jacademie&artifactId=kotlinDemo&name=kotlinDemo&description=Demo%20project%20for%20Spring%20Boot%20Kotlin&packageName=fr.tse.jacademie.kotlinDemo&dependencies=web,data-jpa,h2,actuator,data-rest-explorer,data-rest[start.spring.io] with Gradle, Kotlin, Java 11 +
+À partir de
+https://start.spring.io/#!type=gradle-project&language=kotlin&platformVersion=2.4.2.RELEASE&packaging=jar&jvmVersion=11&groupId=fr.tse.jacademie&artifactId=kotlinDemo&name=kotlinDemo&description=Demo%20project%20for%20Spring%20Boot%20Kotlin&packageName=fr.tse.jacademie.kotlinDemo&dependencies=web,data-jpa,h2,actuator,data-rest-explorer,data-rest[start.spring.io] with Gradle, Kotlin, Java 11 +
 Du code repris depuis les documentations référencées. +
 Du code inspiré par les TPs de la JAcadémie.
 
